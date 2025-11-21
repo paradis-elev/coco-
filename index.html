@@ -1,3 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Coco Chow Chow Virtual Shop</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff7c7, #ffd9e8);
+    color: #333;
+  }
+
+  header {
+    background-color: #ffe8f2;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 4px solid #ffb6c1;
+  }
+
+  header h1 {
+    font-size: 3em;
+    color: #ff69b4;
+    text-shadow: 0 0 10px #ff80c0, 0 0 20px #ff80c0, 0 0 30px #ff80c0;
+  }
+
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .hero img {
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ff80c0;
+    margin: 20px;
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .product {
+    background: #fffaf0;
+    border-radius: 20px;
+    padding: 20px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 0 15px #ffb6c1;
+    transition: transform 0.2s ease;
+  }
+
+  .product:hover {
+    transform: scale(1.05);
+  }
+
+  .product img {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .product h3 {
+    color: #ff69b4;
+    margin: 10px 0;
+  }
+
+  .product button {
+    background-color: #ffb6c1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0 0 10px #ff69b4;
+  }
+
+  .product button:hover {
+    background-color: #ff69b4;
+  }
+
+  #cart {
+    background-color: #fff7f7;
+    border-top: 3px solid #ffb6c1;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  #cart h2 {
+    color: #ff69b4;
+    text-shadow: 0 0 10px #ff80c0;
+  }
+
+  #cart-items {
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: left;
+  }
+
+  #cart-items li {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px #ffd9e8;
+  }
+
+  #checkout {
+    background: #ffeff7;
+    border-top: 3px solid #ffb6c1;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  #checkout button {
+    background-color: #ff69b4;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    box-shadow: 0 0 20px #ff80c0;
+  }
+
+  #checkout button:hover {
+    background-color: #ff1493;
+  }
+
+  footer {
+    background: #ffe8f2;
+    padding: 20px;
+    text-align: center;
+    color: #ff69b4;
+    font-size: 0.9em;
+    border-top: 4px solid #ffb6c1;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🐶 Coco Chow Chow Virtual Shop 🐶</h1>
+  <p>Pastel dreams & pink neon cuddles — adopt your Coco Chow today!</p>
+</header>
+
+<section class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Chow_Chow_-_Yellow.jpg" alt="Chow Chow 1" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Chow_Chow_dog.jpg" alt="Chow Chow 2" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Chow_Chow_puppy.jpg" alt="Chow Chow 3" />
+</section>
+
   <!-- NEW PRODUCT 1 -->
   <div class="product">
     <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/2016_Chow_Chow.jpg" alt="Rainbow Coco" />
@@ -51,3 +211,56 @@
     <p><strong>$20</strong></p>
     <button onclick="addToCart('Baby Coco', 20)">Add to Cart</button>
   </div>
+
+
+<section id="cart">
+  <h2>🛒 Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <p><strong>Total: $<span id="total">0</span></strong></p>
+</section>
+
+<section id="checkout">
+  <h2>Checkout</h2>
+  <button onclick="checkout()">Proceed to Checkout</button>
+</section>
+
+<footer>
+  <p>© 2025 Coco Chow Chow Virtual Shop | Made with 💖 and neon lights</p>
+</footer>
+
+<script>
+  let cart = [];
+  let total = 0;
+
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    total += price;
+    renderCart();
+  }
+
+  function renderCart() {
+    const cartList = document.getElementById("cart-items");
+    const totalEl = document.getElementById("total");
+    cartList.innerHTML = "";
+    cart.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.textContent = `${item.name} - $${item.price}`;
+      cartList.appendChild(li);
+    });
+    totalEl.textContent = total.toFixed(2);
+  }
+
+  function checkout() {
+    if (cart.length === 0) {
+      alert("Your cart is empty! 🛒");
+      return;
+    }
+    alert("Thank you for your purchase of " + cart.length + " Coco(s)! 💖");
+    cart = [];
+    total = 0;
+    renderCart();
+  }
+</script>
+
+</body>
+</html>
