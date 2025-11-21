@@ -1,238 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Coco Chow Chow Virtual Shop</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #fff7c7, #ffd9e8);
-    color: #333;
-  }
-
-  header {
-    background-color: #ffe8f2;
-    text-align: center;
-    padding: 40px 20px;
-    border-bottom: 4px solid #ffb6c1;
-  }
-
-  header h1 {
-    font-size: 3em;
-    color: #ff69b4;
-    text-shadow: 0 0 10px #ff80c0, 0 0 20px #ff80c0, 0 0 30px #ff80c0;
-  }
-
-  .hero {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-  }
-
-  .hero img {
-    width: 250px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #ff80c0;
-    margin: 20px;
-  }
-
-  .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 40px 20px;
-  }
-
-  .product {
-    background: #fffaf0;
-    border-radius: 20px;
-    padding: 20px;
-    width: 260px;
-    text-align: center;
-    box-shadow: 0 0 15px #ffb6c1;
-    transition: transform 0.2s ease;
-  }
-
-  .product:hover {
-    transform: scale(1.05);
-  }
-
-  .product img {
-    width: 100%;
-    border-radius: 15px;
-  }
-
-  .product h3 {
-    color: #ff69b4;
-    margin: 10px 0;
-  }
-
-  .product button {
-    background-color: #ffb6c1;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    color: white;
-    cursor: pointer;
-    font-size: 1em;
-    box-shadow: 0 0 10px #ff69b4;
-  }
-
-  .product button:hover {
-    background-color: #ff69b4;
-  }
-
-  #cart {
-    background-color: #fff7f7;
-    border-top: 3px solid #ffb6c1;
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  #cart h2 {
-    color: #ff69b4;
-    text-shadow: 0 0 10px #ff80c0;
-  }
-
-  #cart-items {
-    margin: 20px auto;
-    max-width: 500px;
-    text-align: left;
-  }
-
-  #cart-items li {
-    background: #fff;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 0 5px #ffd9e8;
-  }
-
-  #checkout {
-    background: #ffeff7;
-    border-top: 3px solid #ffb6c1;
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  #checkout button {
-    background-color: #ff69b4;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 30px;
-    color: white;
-    cursor: pointer;
-    font-size: 1.2em;
-    box-shadow: 0 0 20px #ff80c0;
-  }
-
-  #checkout button:hover {
-    background-color: #ff1493;
-  }
-
-  footer {
-    background: #ffe8f2;
-    padding: 20px;
-    text-align: center;
-    color: #ff69b4;
-    font-size: 0.9em;
-    border-top: 4px solid #ffb6c1;
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <h1>🐶 Coco Chow Chow Virtual Shop 🐶</h1>
-  <p>Pastel dreams & pink neon cuddles — adopt your Coco Chow today!</p>
-</header>
-
-<section class="hero">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Chow_Chow_-_Yellow.jpg" alt="Chow Chow 1" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Chow_Chow_dog.jpg" alt="Chow Chow 2" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Chow_Chow_puppy.jpg" alt="Chow Chow 3" />
-</section>
-
-<section class="products">
+  <!-- NEW PRODUCT 1 -->
   <div class="product">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Chow_Chow_-_Yellow.jpg" alt="Classic Coco" />
-    <h3>Classic Coco</h3>
-    <p>Fluffy pastel yellow Chow Chow plushie — 25cm tall.</p>
-    <p><strong>$25</strong></p>
-    <button onclick="addToCart('Classic Coco', 25)">Add to Cart</button>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/2016_Chow_Chow.jpg" alt="Rainbow Coco" />
+    <h3>Rainbow Coco</h3>
+    <p>Pastel rainbow fur with sparkly neon eyes. Fan favorite!</p>
+    <p><strong>$40</strong></p>
+    <button onclick="addToCart('Rainbow Coco', 40)">Add to Cart</button>
   </div>
 
+  <!-- NEW PRODUCT 2 -->
   <div class="product">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Chow_Chow_puppy.jpg" alt="Pink Dream Coco" />
-    <h3>Pink Dream Coco</h3>
-    <p>Light pink edition with neon glow effect. Limited!</p>
-    <p><strong>$35</strong></p>
-    <button onclick="addToCart('Pink Dream Coco', 35)">Add to Cart</button>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Chow_Chow_in_show_pose.jpg" alt="Royal Coco" />
+    <h3>Royal Coco</h3>
+    <p>Majestic dark-fur edition with gold collar accessory.</p>
+    <p><strong>$45</strong></p>
+    <button onclick="addToCart('Royal Coco', 45)">Add to Cart</button>
   </div>
 
+  <!-- NEW PRODUCT 3 -->
   <div class="product">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Chow_Chow_dog.jpg" alt="Mini Coco" />
-    <h3>Mini Coco</h3>
-    <p>Miniature pastel Chow Chow figure — 10cm tall.</p>
-    <p><strong>$15</strong></p>
-    <button onclick="addToCart('Mini Coco', 15)">Add to Cart</button>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Chow_Chow_BW.jpg" alt="Snow Coco" />
+    <h3>Snow Coco</h3>
+    <p>Pure white winter-themed Coco — soft as fresh snow.</p>
+    <p><strong>$30</strong></p>
+    <button onclick="addToCart('Snow Coco', 30)">Add to Cart</button>
   </div>
-</section>
 
-<section id="cart">
-  <h2>🛒 Your Cart</h2>
-  <ul id="cart-items"></ul>
-  <p><strong>Total: $<span id="total">0</span></strong></p>
-</section>
+  <!-- NEW PRODUCT 4 -->
+  <div class="product">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Chow_Chow_red.jpg" alt="Cherry Coco" />
+    <h3>Cherry Coco</h3>
+    <p>Deep red Chow Chow plush — sweet, soft & vibrant.</p>
+    <p><strong>$28</strong></p>
+    <button onclick="addToCart('Cherry Coco', 28)">Add to Cart</button>
+  </div>
 
-<section id="checkout">
-  <h2>Checkout</h2>
-  <button onclick="checkout()">Proceed to Checkout</button>
-</section>
+  <!-- NEW PRODUCT 5 -->
+  <div class="product">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Chow_Chow_black.jpg" alt="Midnight Coco" />
+    <h3>Midnight Coco</h3>
+    <p>Black fur with neon purple glow accents. Mysterious & stylish.</p>
+    <p><strong>$38</strong></p>
+    <button onclick="addToCart('Midnight Coco', 38)">Add to Cart</button>
+  </div>
 
-<footer>
-  <p>© 2025 Coco Chow Chow Virtual Shop | Made with 💖 and neon lights</p>
-</footer>
-
-<script>
-  let cart = [];
-  let total = 0;
-
-  function addToCart(name, price) {
-    cart.push({ name, price });
-    total += price;
-    renderCart();
-  }
-
-  function renderCart() {
-    const cartList = document.getElementById("cart-items");
-    const totalEl = document.getElementById("total");
-    cartList.innerHTML = "";
-    cart.forEach((item, index) => {
-      const li = document.createElement("li");
-      li.textContent = `${item.name} - $${item.price}`;
-      cartList.appendChild(li);
-    });
-    totalEl.textContent = total.toFixed(2);
-  }
-
-  function checkout() {
-    if (cart.length === 0) {
-      alert("Your cart is empty! 🛒");
-      return;
-    }
-    alert("Thank you for your purchase of " + cart.length + " Coco(s)! 💖");
-    cart = [];
-    total = 0;
-    renderCart();
-  }
-</script>
-
-</body>
-</html>
-www
+  <!-- NEW PRODUCT 6 -->
+  <div class="product">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Chow_Chow_pup.jpg" alt="Baby Coco" />
+    <h3>Baby Coco</h3>
+    <p>Tiny baby edition — the cutest fluff ball ever created.</p>
+    <p><strong>$20</strong></p>
+    <button onclick="addToCart('Baby Coco', 20)">Add to Cart</button>
+  </div>
